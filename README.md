@@ -1,4 +1,4 @@
 # meistertask-php-sdk
  Simple PHP class for integrating with Meistertask Api
 
- Does not work yet, still in development
+ Still in development so I can't guarantee it will work in production. 
