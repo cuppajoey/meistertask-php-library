@@ -115,15 +115,9 @@ class MeisterTask {
         $output = '';
 
         if ($statusCode != 200) {
-            $output = array(
-                'status' => 'error',
-                'message' => $result->error->message
-            );
+            throw new Exception('Error: ' . $result->error->message);
         } else {
-            $output = array(
-                'status' => 'success',
-                'message' => 'Task was successfully created'
-            );
+            $output = 'Task was successfully created';
         }
 
         // Close cURL session handle
