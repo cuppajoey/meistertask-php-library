@@ -81,7 +81,7 @@ class MeisterTask {
      *	@param array $labels task labels ids you want to apply to the task
      *	@param int $status the status of the task (1=open, 2=completed, 8=trashed, 18=completed_archived)
      */
-    public function createTask($name, $notes, $assignedMemberID, $labels, $status = 1) {
+    public function createTask($name, $notes, $assignedMemberID = '', $labels = array(), $status = 1) {
         $data = array(
             'name' => $name,
             'notes' => $notes,
