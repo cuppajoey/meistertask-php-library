@@ -1,6 +1,6 @@
 <?php
 
-class taskMeister {
+class MeisterTask {
 
     /*
      *	Meistertask API key
