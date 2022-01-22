@@ -41,8 +41,13 @@ class taskMeister {
         $this->endpointSections = 'https://www.meistertask.com/api/sections';
     }
 
-
-    protected function setSecretKey($key) {
+    /*
+     *	Set the meistertask api key
+     *
+     *	@access public
+     *	@param	string	private api key
+     */
+    private function setSecretKey($key) {
         $this->secretKey = $key;
     }
 
@@ -66,11 +71,21 @@ class taskMeister {
         $this->projectID = $id;
     }
 
-    public function createTask($name, $notes, $assigned_to_id, $labels, $status = 1) {
+    /*
+     *	Creates a task in selected board & section
+     *
+     *	@access public
+     *	@param string $name the task title
+     *	@param string $notes task notes/description
+     *	@param int $assignedMemberID the id of the team member to assign this task
+     *	@param array $labels task labels ids you want to apply to the task
+     *	@param int $status the status of the task (1=open, 2=completed, 8=trashed, 18=completed_archived)
+     */
+    public function createTask($name, $notes, $assignedMemberID, $labels, $status = 1) {
         $data = array(
             'name' => $name,
             'notes' => $notes,
-            'assigned_to_id' => $assigned_to_id,
+            'assigned_to_id' => $assignedMemberID,
             'label_ids' => $labels,
             'status' => $status
         );
